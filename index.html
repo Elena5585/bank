@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./styles.css">
+	<title>Document</title>
+</head>
+<body>
+	<div class="container">
+		<form action="#" id="form" name="form">
+			<h2 class="form-title">Расчёт банковских вкладов</h2>
+			<div class="input-block">
+				<span class="input-span">Первоначальный взнос:</span>
+				<input type="number" min="100000" max="1000000000" step="100000" class="form-input" id="initial" name="initial" placeholder="Initial amount...">
+			</div>			
+			<div class="input-block">
+				<span class="input-span">Ежемесячный взнос:</span>
+				<input type="number" min="100000" max="1000000000" step="100000" class="form-input" id="monthly"  name="monthly" placeholder="Monthly amount...">
+			</div>
+			<div class="input-block">
+				<span class="input-span">Ставка, %:</span>
+				<input type="number"  min="1" max="50" step="1" class="form-input" id="rate"  name="rate" placeholder="Rate, %...">
+			</div>
+			<div class="input-block">
+				<span class="input-span">Курс доллара при вложении:</span>
+				<input type="number"  min="10000" max="20000" step="10" class="form-input" id="deposit-course"  name="depositCourse" placeholder="USD course (deposit)...">
+			</div>
+			<div class="input-block">
+				<span class="input-span">Курс доллара при снятии:</span>
+				<input type="number" min="10000" max="20000" step="10" class="form-input" id="withdrawal-course"  name="withdrawalCourse" placeholder="USD course (withdrawal)...">
+			</div>
+			<div class="input-block">
+				<span class="input-span">Желаемый ежемесячный доход, сум:</span>
+				<input type="number" min="100000" max="1000000000" step="100000" class="form-input" id="wished" name="wished" placeholder="Wished payment...">
+			</div>
+			<p class="form-message"></p>
+			<button class="form-btn">Рассчитать</button>
+		</form>
+		<div id="output">
+			<h3 class="output-title">Справка</h3>
+			<ul class="output-block" >
+				<li class="output-block__item" id="initial-output">Первоначальный взнос / Ежемесячное пополнение</li>				
+				<li class="output-block__item" id="monthGap">Количество месяцев / лет, чтобы достичь результат</li>
+				<li class="output-block__item" id="usd-rate">Фактическая ставка, относительно доллара</li>
+				<li class="output-block__item" id="last-month">Суммы вклада на последний месяц в долларах и ежемесячных выплат в сумах</li>
+			</ul>
+			<div class="output-table"></div>
+		</div>
+	</div>
+</body>
+<script src="./bank.js"></script>
+</html>
