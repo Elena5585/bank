@@ -100,8 +100,8 @@ function calculate(){
 		initialOutput.textContent = `Первоначальный взнос составляет ${initialAmount} сум / Ежемесячное пополнение ${monthlyAmount} сум`;
 		monthlyGap.textContent = `Желаемый месячный доход будет достигнут за ${count} месяцев, ${(count/ 12).toFixed(1)} лет`;
 		usdRate.textContent = `Фактическая ставка в долларах составит ${Math.ceil((rateValue * 100) - usdRateLose)}%, в суммах ${rateValue * 100}%`;
-		lastMonth.textContent = `Сумма вклада на последний месяц составит $ ${financeAmountInUsd} / ${financeAmount} сум ,
-		а сумма ежемесячных выплат ${financePayment} сум`;	
+		lastMonth.textContent = `Сумма вклада на последний месяц составит $ ${financeAmountInUsd} или ${financeAmount} сум ,`
+		`а сумма ежемесячных выплат ${financePayment} сум`;	
 		clearForm();
 
 	}else{
