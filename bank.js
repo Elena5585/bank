@@ -94,7 +94,7 @@ function calculate(){
 		let financeAmount = num2.replace(/\B(?=(?:\d{3})*$)/g, ' ');	
 		let [_3, num3, suffix3] =  String(initialValue).match(financeRegExp);
 		let initialAmount = num3.replace(/\B(?=(?:\d{3})*$)/g, ' ');	
-		let [_4, num4, suffix4] =  String(initialValue).match(financeRegExp);
+		let [_4, num4, suffix4] =  String(monthlyValue).match(financeRegExp);
 		let monthlyAmount = num4.replace(/\B(?=(?:\d{3})*$)/g, ' ');	
 		
 		initialOutput.textContent = `Первоначальный взнос составляет ${initialAmount} сум / Ежемесячное пополнение ${monthlyAmount} сум`;
