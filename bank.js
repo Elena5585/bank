@@ -96,11 +96,13 @@ function calculate(){
 		let initialAmount = num3.replace(/\B(?=(?:\d{3})*$)/g, ' ');	
 		let [_4, num4, suffix4] =  String(monthlyValue).match(financeRegExp);
 		let monthlyAmount = num4.replace(/\B(?=(?:\d{3})*$)/g, ' ');	
+
+		console.log(rateValue, (rateValue * 100) - usdRateLose);
 		
 		initialOutput.textContent = `Первоначальный взнос составляет ${initialAmount} сум / Ежемесячное пополнение ${monthlyAmount} сум`;
 		monthlyGap.textContent = `Желаемый месячный доход будет достигнут за ${count} месяцев, ${(count/ 12).toFixed(1)} лет`;
-		usdRate.textContent = `Фактическая ставка в долларах составит ${Math.ceil((rateValue * 100) - usdRateLose)}%, в суммах ${rateValue * 100}%`;
-		lastMonth.textContent = `Сумма вклада на последний месяц составит $ ${financeAmountInUsd} или ${financeAmount} сум , а сумма ежемесячных выплат ${financePayment} сум`;	
+		usdRate.textContent = `Фактическая ставка в долларах составит ${Math.round((rateValue * 100) - usdRateLose)}%, в суммах ${rateValue * 100}%`;
+		lastMonth.textContent = `Сумма вклада на последний месяц составит $${financeAmountInUsd} или ${financeAmount} сум , а сумма ежемесячных выплат ${financePayment} сум`;	
 		clearForm();
 
 	}else{
